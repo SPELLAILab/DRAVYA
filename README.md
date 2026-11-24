@@ -7,13 +7,11 @@
 [![Paper: AAAI 2027](https://img.shields.io/badge/Accepted-AAAI%202027%20Student%20Abstract-0078D4.svg)](https://aaai.org)
 [![Benchmark: 20 Dilemmas](https://img.shields.io/badge/Benchmark-20%20Dilemmas%20%7C%201%2C200%20Generations-orange.svg)](data/)
 
-**Accepted to the AAAI-27 Student Abstract and Poster Program.**
-
-**Authors:** Shanmukh Datta¹*, Kumar Prateek¹, Dr. Simranjit Singh¹  
-¹Dr. B. R. Ambedkar National Institute of Technology Jalandhar  
-*Corresponding Author (`bodasd.ic.24@nitj.ac.in`)
-
-[Benchmark Data](data/) · [Evaluation Code](code/) · [Results & Tables](docs/BENCHMARK_RESULTS.md)
+> **Official repository for the AAAI 2027 Student Abstract paper:**  
+> *"DRAVYA: Quantifying Cross-Lingual Cultural Drift Across Dravidian Languages"*  
+> **Authors:** Shanmukh Datta, Kumar Prateek, Dr. Simranjit Singh  
+> **Affiliation:** Dr. B. R. Ambedkar National Institute of Technology Jalandhar  
+> **Links:** [Benchmark Data](data/) &nbsp;|&nbsp; [Evaluation Code](code/) &nbsp;|&nbsp; [Results & Tables](docs/BENCHMARK_RESULTS.md)
 
 ---
 
