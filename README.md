@@ -11,7 +11,7 @@
 
 > **Official repository for the AAAI 2027 Student Abstract paper:**  
 > *"DRAVYA: Quantifying Cross-Lingual Cultural Drift Across Dravidian Languages"*  
-> **Authors:** Shanmukh Datta¹*, Kumar Prateek¹, Dr. Simranjit Singh¹ (¹Department of Information Technology, Dr. B. R. Ambedkar National Institute of Technology Jalandhar) &nbsp;|&nbsp; *Corresponding Author (`bodasd.ic.24@nitj.ac.in`)
+> **Authors:** Shanmukh Datta¹*, Kumar Prateek¹, Dr. Simranjit Singh¹ (¹Dr. B. R. Ambedkar National Institute of Technology Jalandhar) &nbsp;|&nbsp; *Corresponding Author (`bodasd.ic.24@nitj.ac.in`)
 
 ---
 
