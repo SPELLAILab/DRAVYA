@@ -76,8 +76,8 @@ All 1,200 generations, adjudications, and embedding vectors are pre-computed in 
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/shanmukhdatta/dravidian-cultural-alignment.git
-cd dravidian-cultural-alignment
+git clone https://github.com/SPELLAILab/DRAVYA.git
+cd DRAVYA
 
 # 2. Install dependencies
 pip install -r requirements.txt
