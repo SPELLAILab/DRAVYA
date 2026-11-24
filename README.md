@@ -4,10 +4,8 @@
 
 # DRAVYA: Quantifying Cross-Lingual Cultural Drift Across Dravidian Languages
 
-[![Paper: AAAI 2027](https://img.shields.io/badge/Accepted-AAAI%202027%20Student%20Abstract-blue.svg)](https://aaai.org)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-brightgreen.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Human Agreement](https://img.shields.io/badge/Human%20Validation-%CE%BA_w%20%3D%200.590-purple.svg)](docs/annotator_guidelines.md)
+[![Paper: AAAI 2027](https://img.shields.io/badge/Accepted-AAAI%202027%20Student%20Abstract-0078D4.svg)](https://aaai.org)
+[![Benchmark: 20 Dilemmas](https://img.shields.io/badge/Benchmark-20%20Dilemmas%20%7C%201%2C200%20Generations-orange.svg)](data/)
 
 > **Official repository for the AAAI 2027 Student Abstract paper:**  
 > *"DRAVYA: Quantifying Cross-Lingual Cultural Drift Across Dravidian Languages"*  
