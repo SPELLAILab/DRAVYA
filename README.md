@@ -17,22 +17,31 @@
 
 ## 📌 About the Paper
 
-When multilingual large language models deployed in non-Western societies are queried on real-life ethical dilemmas, does their counsel shift depending on whether the query is framed in **English, Telugu, Tamil, or Kannada**?
+When an AI assistant is queried on a real-life moral dilemma—such as taking a high-interest loan to fund a niece's lavish wedding versus preserving savings for a child's university education—Western individualist norms prioritize personal financial autonomy, whereas South Asian collectivist norms emphasize maternal uncle kinship duties (*thaaimaaman / menamama*) and family honor. **Does a model's ethical advice shift simply because the user asks in Telugu, Tamil, or Kannada instead of English?**
 
-**DRAVYA** is an empirical benchmark investigating cross-lingual cultural value drift and generation stability across the **Dravidian language family** (representing over 250 million native speakers). Evaluating $N = 1,200$ generations across 6 foundation models under both generic and culturally localized conditions across 20 calibrated moral dilemmas, we employ a dual-lens methodology coupling:
-1. **Continuous Hofstede Cultural Stance** (1.0 = Western Individualist $\rightarrow$ 5.0 = South Asian Collectivist/Hierarchical), validated through double-blind native human evaluations.
-2. **Cross-Lingual Semantic Representation Drift** measured via LaBSE geometric distances ($1 - \cos$).
+**DRAVYA** evaluates this across **20 culturally calibrated dilemmas** ($N = 1,200$ generations at $T=0.0$) over 6 foundation models spanning Western (`Gemma-2-9B`, `Gemma-3-12B`, `Llama-3.1-8B`, `Nemotron-70B`), Eastern (`Qwen-3-8B`), and sovereign Indic (`Sarvam-M`, 24B) provenances.
+
+* **How Global Models React:** Standard BPE global models suffer heavy generation fragility in Dravidian scripts (`31.0%–47.5%` repetition loops in `Nemotron-70B`, `Llama-3.1-8B`, and `Qwen-3-8B`) and shift **directionally toward South Asian collectivism** ($\Delta = +0.12$ to $+0.40$) when queried in Telugu, Tamil, or Kannada rather than English.
+* **How Indic Specialization Reacts:** Indic-adapted `Sarvam-M` (24B) eliminates truncation and loops (`100%` clean outputs), yields the lowest cross-lingual semantic drift (`LaBSE = 0.265`), and anchors consistently around a balanced South Asian baseline (`3.05`).
+
+---
+
+## 🧪 Evaluation Framework
+
+1. **Bilingual & Regional Design:** 20 dilemmas balanced across four Hofstede axes (*Individualism/Collectivism, Power Distance, Long-Term Orientation, Indulgence/Restraint*), translated by native linguists into English, Telugu, Tamil, and Kannada under **Generic** (neutral) and **Localized** (regional entities like *panchayats*, *thaaimaaman*) conditions.
+2. **Generation Pathology Audit:** All $1,200$ generations are audited for script adherence, truncation, and repetition loops (`23` script failures and `127` truncated outputs excluded $\rightarrow$ `1,050` usable outputs; `1,049` valid scores).
+3. **Dual-Lens Measurement & Human Validation:** Clean responses are scored via **GPT-4o** using scenario-specific `1.0–5.0` behavioral anchors and paired with **LaBSE** cross-lingual cosine drift ($1 - \cos$, `570` matched pairs). Stratified double-blind validation by native evaluators ($N = 120$) establishes moderate ordinal agreement ($\kappa_w = 0.590$, **`95.8%` within $\pm 1$ point**; judge-human $\kappa_w = 0.546$, `87.5%` within $\pm 1$).
 
 ---
 
 ## 🔬 Key Findings
 
-* **Indic Vocabulary Coverage & Stability:** Dedicated Indic foundation models (`sarvam-m`, 24B) achieve **100% clean outputs** (0% repetition loops, 0% truncations), 100% script fidelity, and the lowest semantic representation drift ($\text{LaBSE} = 0.265$), preserving robust cultural alignment across Dravidian prompts.
-* **Cultural Entity Priming:** Introducing authentic regional entities (*Venkatesh in Karimnagar*, *Sarpanch*, *Gram Sabha*, *Sankranti*) significantly activates localized collectivist counsel across models ($\Delta_{\text{loc}} \in [+0.24, +0.85]$).
-* **The Script Effect:** Presenting dilemmas in native Dravidian scripts yields a significantly higher collectivist stance than English script representations, demonstrating that script acts as an independent cultural activation channel.
-* **Double-Blind Human Validation:** Independent evaluations by university-educated native Dravidian speakers confirm strong alignment with automated adjudications ($\kappa_w = 0.590$, with **95.8% agreement within $\pm 1$ point**).
+* **Tokenization Fragility Across Provenances:** Larger parameter count alone does not guarantee Dravidian generation stability across differing architectures, corpora, and tokenizers (`Nemotron-70B`: `36.0%` truncation, `31.0%` loops vs. `Sarvam-M`: `0.0%` truncation/loops, `100%` clean outputs).
+* **Language-Driven Drift (H1):** In generic dilemmas, Dravidian prompts directionally shift global Western and Eastern models toward collectivist counsel ($\Delta = +0.12$ to $+0.40$), while `Sarvam-M` maintains an anchored baseline ($\Delta = -0.28$, $p = 0.0031^{**}$).
+* **Entity Priming & Regional Divergence (H3):** Authentic regional entities trigger a sharp collectivist surge in Telugu across all models ($\Delta_{\text{loc}} \in [+0.24, +0.85]$; `Sarvam-M` $2.35 \rightarrow 3.20$, Wilcoxon $p = 0.002^{**}$), whereas localized Tamil prompts yield mixed or egalitarian shifts reflecting regional social-reform traditions.
+* **Hofstede Dimension Vulnerability (H2):** *Collectivism* exhibits the largest net signed shift ($\Delta = +0.262$), followed by *Indulgence* ($\Delta = +0.213$), while *Power Distance* masks high bidirectional volatility ($|\Delta| = 0.54$, net $\Delta = +0.027$).
 
-> Full benchmark tables, dimension rankings, and per-language breakdowns are available in [docs/BENCHMARK_RESULTS.md](docs/BENCHMARK_RESULTS.md).
+> Full tables and per-language breakdowns are documented in [docs/BENCHMARK_RESULTS.md](docs/BENCHMARK_RESULTS.md).
 
 ---
 
