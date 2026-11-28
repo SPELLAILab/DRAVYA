@@ -9,7 +9,7 @@
 
 > **Official repository for the AAAI 2027 Student Abstract paper:**  
 > *"DRAVYA: Quantifying Cross-Lingual Cultural Drift Across Dravidian Languages"*  
-> **Authors:** Shanmukh Datta, Kumar Prateek, Dr. Simranjit Singh  
+> **Authors:** Shanmukh Datta, Kumar Prateek, Vijay Kumar, Simranjit Singh  
 > **Affiliation:** Dr. B. R. Ambedkar National Institute of Technology Jalandhar  
 > **Links:** [Benchmark Data](data/) &nbsp;|&nbsp; [Evaluation Code](code/) &nbsp;|&nbsp; [Results & Tables](docs/BENCHMARK_RESULTS.md)
 
@@ -96,7 +96,7 @@ python code/human_eval/compute_all_human_agreement.py
 ```bibtex
 @inproceedings{datta2027dravya,
   title     = {{DRAVYA}: Quantifying Cross-Lingual Cultural Drift Across Dravidian Languages},
-  author    = {Datta, Shanmukh and Prateek, Kumar and Singh, Simranjit},
+  author    = {Datta, Shanmukh and Prateek, Kumar and Kumar, Vijay and Singh, Simranjit},
   booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence (Student Abstract and Poster Program)},
   year      = {2027},
   note      = {Accepted for publication}
